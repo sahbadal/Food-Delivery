@@ -1,0 +1,153 @@
+.navbar{
+    padding: 20px 0px;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.logo img{
+    width: 40px;
+}
+.logo h1{
+    color:rgb(245, 74, 44);
+}
+
+.nav-lists ul{
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+   
+}
+.nav-lists ul li{
+    list-style: none;
+    cursor: pointer;
+    color: #4b5880;
+}
+.nav-right{
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+}
+.btn{
+    background:#fff;
+    border: 1px solid tomato;
+    color: #4b5880;
+    font-size: 16px;
+    padding: 10px 28px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn:hover{
+    background:#fefbfa;
+}
+.nav-lists .active {
+    padding-bottom: 2px;
+    border-bottom: 2px solid #4b5880;
+}
+
+.basket-icon{
+    position: relative;
+}
+.basket-icon .dot{
+    position: absolute;
+    min-width: 6px;
+    min-height: 6px;
+    background-color:rgb(41, 244, 41);
+    border-radius: 5px;
+    top: -6px;
+    right: -6px;
+}
+.navbar-profile{
+    position: relative;
+    cursor: pointer;
+}
+.nav-profile-dropdown{
+    position: absolute;
+    display: none;
+    right: 0;
+    z-index: 1;
+}
+.navbar-profile:hover .nav-profile-dropdown{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #fff2ef;
+    padding: 12px 25px;
+    border-radius: 4px;
+    border: 1px solid rgb(245, 74, 44);
+    outline: 2px solid #fff;
+    list-style: none;
+}
+.nav-profile-dropdown li{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+.nav-profile-dropdown img{
+    width: 20px;
+}
+.nav-profile-dropdown li:hover{
+    color: rgb(245, 74, 44);
+}
+/* responsive */
+@media (max-width:1050px){
+    .logo{
+        width:140px;
+    }
+    .nav-lists{
+        gap: 20px;
+        font-size: 17px;
+    }
+    .nav-right{
+        gap: 30px;
+    }
+    .nav-right img{
+        width: 22px;
+    }
+    .btn{
+        padding: 8px 25px;
+    }
+}
+
+@media (max-width:900px){
+    .logo{
+        width:120px;
+    }
+    .nav-lists{
+        gap:15px;
+        font-size: 16px;
+    }
+    .nav-right{
+        gap: 20px;
+    }
+    .nav-right img{
+        width: 20px;
+    }
+    .btn{
+        padding: 7px 20px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width:750px){
+    .nav-lists{
+       display: none;
+    }
+
+    .logo img{
+        width: 25px;
+    }
+    .logo h1{
+        font-size: 20px;
+    }
+   
+}
+
+

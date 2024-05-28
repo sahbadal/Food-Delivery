@@ -1,0 +1,37 @@
+.application-donwload{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    gap:10px;
+}
+.download-logo img{
+    margin-top: 20px;
+    width:150px;
+    height: 50px;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: 0.3s ;
+}
+.application-donwload h1{
+    text-align: center;
+}
+.download-logo img:hover{
+    transform: scale(1.05);
+}
+
+@media (max-width: 750px) {
+    .application-download {
+        flex-direction: column;
+        align-items: center; 
+        margin-top: 50px; 
+        gap: 5px; 
+    }
+
+    .download-logo img {
+        width: 120px; 
+        height: 40px; 
+        margin-top: 10px; 
+        margin-right: 10px; 
+    }
+}
