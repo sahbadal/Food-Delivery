@@ -1,0 +1,30 @@
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 4%;
+}
+.navbar-logo{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.navbar-logo-title{
+    display: flex;
+    align-items:center;
+    cursor: pointer;
+}
+.navbar-logo-title img{
+    width: 40px;
+}
+.navbar-logo-title h1{
+    color:rgb(245, 74, 44);
+}
+.admin-panel{
+    font-size: 15px;
+    font-weight: 400;
+    color: rgb(18, 16, 16);
+}
+.navbar .profile{
+    width: 40px;
+}
