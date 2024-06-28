@@ -6,6 +6,7 @@ import profile_image from './profile_image.png'
 import upload_area from './upload_area.png'
 import parcel_icon from './parcel_icon.png'
 
+export const url = 'https://food-delivery-backend-3ba2.onrender.com'
 export const assets ={
     logo,
     chilli,
@@ -16,4 +17,4 @@ export const assets ={
     parcel_icon
 }
 
-export const url = 'https://food-delivery-backend-3ba2.onrender.com'
+
