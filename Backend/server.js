@@ -8,7 +8,7 @@ import cartRouter from './routes/cartRoute.js';
 import orderRouter from './routes/orderRoute.js';
 
 const app = express()
-const port = 4000;
+const port = process.env.port || 4000;
 
 //middlewares
 app.use(express.json())
