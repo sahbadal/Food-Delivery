@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Navbar from './components/Navbar/Navbar.jsx';
 import SideBar from './components/SideBar/SideBar.jsx'
 import {Routes,Route} from 'react-router-dom'
@@ -9,7 +9,7 @@ import { ToastContainer} from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
 const App = () => {
 
-  const url = "http://localhost:4000"
+  const url = "https://food-delivery-backend-3ba2.onrender.com"
 
   return (
     <div>
