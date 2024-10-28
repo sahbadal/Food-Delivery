@@ -2,6 +2,7 @@ import userModel from "../models/userModel.js";
 import jwt from 'jsonwebtoken'
 import bcrypt from 'bcrypt'
 import validator from 'validator'
+import { JWT_SECRET } from "../config/envConfig.js";
 
 
 // login user 
@@ -29,7 +30,7 @@ const loginUser = async (req, res) => {
 }
 
 const createToken = (id) => {
-    return jwt.sign({ id }, process.env.JWT_SECRET)
+    return jwt.sign({ id }, JWT_SECRET)
 }
 
 // register user

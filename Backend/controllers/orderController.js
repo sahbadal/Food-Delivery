@@ -1,8 +1,9 @@
 import Stripe from 'stripe';
 import orderModel from '../models/orderModel.js';
 import userModel from '../models/userModel.js';
+import { STRIPE_SECRET_KEY } from '../config/envConfig.js';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+const stripe = new Stripe(STRIPE_SECRET_KEY);
 
 const placeOrder = async (req, res) => {
     const frontend_url = "https://food-delivery-frontend-2m0g.onrender.com";
