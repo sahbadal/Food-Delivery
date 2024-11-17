@@ -22,12 +22,12 @@ jobs:
 
       # Step 3: Install Backend Dependencies
       - name: Install backend dependencies
-        working-directory: ./server
+        working-directory: ./backend # Updated path for backend
         run: npm install
 
       # Step 4: Run Backend Tests (optional)
       - name: Run backend tests
-        working-directory: ./server
+        working-directory: ./backend # Updated path for backend
         run: npm test
 
       # Step 5: Deploy Backend to Render
@@ -40,7 +40,7 @@ jobs:
 
       # Step 6: Build Frontend
       - name: Build frontend
-        working-directory: ./client
+        working-directory: ./frontend # Updated path for frontend
         run: |
           npm install
           npm run build
