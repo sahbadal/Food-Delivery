@@ -1,0 +1,62 @@
+name: CI/CD Pipeline for MERN Food Delivery App
+
+on:
+  push:
+    branches:
+      - main # Main branch pe push hone par trigger hoga
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18.x"
+
+      # Step 3: Install Backend Dependencies
+      - name: Install backend dependencies
+        working-directory: ./server
+        run: npm install
+
+      # Step 4: Run Backend Tests (optional)
+      - name: Run backend tests
+        working-directory: ./server
+        run: npm test
+
+      # Step 5: Deploy Backend to Render
+      - name: Deploy backend to Render
+        env:
+          RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
+        run: |
+          curl -X POST -H "Authorization: Bearer $RENDER_API_KEY" \
+          https://api.render.com/deploy/srv-${{ secrets.RENDER_BACKEND_SERVICE_ID }}
+
+      # Step 6: Build Frontend
+      - name: Build frontend
+        working-directory: ./client
+        run: |
+          npm install
+          npm run build
+
+      # Step 7: Deploy Frontend to Render
+      - name: Deploy frontend to Render
+        env:
+          RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
+        run: |
+          curl -X POST -H "Authorization: Bearer $RENDER_API_KEY" \
+          https://api.render.com/deploy/srv-${{ secrets.RENDER_FRONTEND_SERVICE_ID }}
+
+      # Step 8: Deploy Admin Panel to Render
+      - name: Deploy admin panel to Render
+        env:
+          RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
+        run: |
+          curl -X POST -H "Authorization: Bearer $RENDER_API_KEY" \
+          https://api.render.com/deploy/srv-${{ secrets.RENDER_ADMIN_SERVICE_ID }}
