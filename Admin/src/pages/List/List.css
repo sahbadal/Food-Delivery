@@ -20,9 +20,6 @@
 
 .cursor {
     cursor: pointer;
-    height: 20px;
-    width: 20px;
-    color: red;
 }
 
 @media (max-width:600px) {
