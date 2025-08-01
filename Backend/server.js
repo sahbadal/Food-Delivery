@@ -9,7 +9,10 @@ import orderRouter from "./routes/orderRoute.js";
 
 const app = express();
 
-const allowedOrigins = ["https://food-delivery-bice-eight.vercel.app"];
+const allowedOrigins = [
+  "https://food-delivery-bice-eight.vercel.app",
+  "https://food-delivery-admin-five-wheat.vercel.app",
+];
 
 //middlewares
 app.use(express.json());
