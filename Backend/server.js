@@ -9,9 +9,16 @@ import orderRouter from "./routes/orderRoute.js";
 
 const app = express();
 
+const allowedOrigins = ["https://food-delivery-bice-eight.vercel.app"];
+
 //middlewares
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: allowedOrigins,
+    credentials: true,
+  })
+);
 
 // DB connection
 connectDB();
