@@ -29,6 +29,7 @@
 
 .cartItems-item .cross {
     cursor: pointer;
+    color: red;
 }
 
 .cart-bottom {

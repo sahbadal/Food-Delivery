@@ -2,9 +2,10 @@ import './Cart.css'
 import { StoreContext } from '../../context/StoreContext.jsx';
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom'
+import { Trash2 } from 'lucide-react';
 const Cart = () => {
 
-  const { cartItems, food_list, removeFromCart, getTotalCartAmount, url } = useContext(StoreContext);
+  const { cartItems, food_list, removeFromCart, getTotalCartAmount, } = useContext(StoreContext);
 
   const navigate = useNavigate();
 
@@ -27,12 +28,12 @@ const Cart = () => {
               return (
                 <div key={item._id}>
                   <div className='cartItems-title cartItems-item'>
-                    <img src={url + "/images/" + item.image} />
+                    <img src={item.image} />
                     <p>{item.name}</p>
                     <p>${item.price}</p>
                     <p>{cartItems[item._id]}</p>
                     <p>${item.price * cartItems[item._id]}</p>
-                    <p onClick={() => removeFromCart(item._id)} className='cross'>X</p>
+                    <p onClick={() => removeFromCart(item._id)} className='cross'><Trash2 width={20} /></p>
                   </div>
                   <hr />
                 </div>
