@@ -2,6 +2,7 @@ import './List.css';
 import { toast } from 'react-toastify'
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { assets } from '../../assets/assets.js'
 
 const List = ({ url }) => {
 
@@ -46,14 +47,16 @@ const List = ({ url }) => {
         </div>
         {
           list.map((item, index) => {
-            console.log(item.image)
+            if (!item.image) {
+              item.image = 'https://via.placeholder.com/150';
+            }
             return (
               <div key={index} className='list-table-format'>
                 <img src={item.image} />
                 <p>{item.name}</p>
                 <p>{item.category}</p>
                 <p>${item.price}</p>
-                <p onClick={() => removeFood(item._id)} className='cursor'>X</p>
+                <p onClick={() => removeFood(item._id)} className='cursor'><img src={assets.bin} alt="delete icon" /></p>
               </div>
             )
           })
