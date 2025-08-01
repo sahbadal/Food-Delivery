@@ -6,6 +6,7 @@ import foodRouter from "./routes/foodRoute.js";
 import userRouter from "./routes/userRoute.js";
 import cartRouter from "./routes/cartRoute.js";
 import orderRouter from "./routes/orderRoute.js";
+import { handleStripeWebhook } from "./controllers/stripeController.js";
 
 const app = express();
 
@@ -13,6 +14,12 @@ const allowedOrigins = [
   "https://food-delivery-bice-eight.vercel.app",
   "https://food-delivery-admin-five-wheat.vercel.app",
 ];
+
+app.use(
+  "/webhook",
+  express.raw({ type: "application/json" }),
+  handleStripeWebhook
+);
 
 //middlewares
 app.use(express.json());
