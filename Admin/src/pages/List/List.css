@@ -20,7 +20,7 @@
 
 .cursor {
     cursor: pointer;
-    width: 12px;
+    color: red;
 }
 
 @media (max-width:600px) {

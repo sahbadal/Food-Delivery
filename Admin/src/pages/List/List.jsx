@@ -2,7 +2,8 @@ import './List.css';
 import { toast } from 'react-toastify'
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { assets } from '../../assets/assets.js'
+import { Delete } from 'lucide-react'
+
 
 const List = ({ url }) => {
 
@@ -56,7 +57,7 @@ const List = ({ url }) => {
                 <p>{item.name}</p>
                 <p>{item.category}</p>
                 <p>${item.price}</p>
-                <p onClick={() => removeFood(item._id)} className='cursor'><img src={assets.bin} alt="delete icon" /></p>
+                <p onClick={() => removeFood(item._id)} className='cursor'><Delete width={12} /></p>
               </div>
             )
           })
