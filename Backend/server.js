@@ -6,7 +6,7 @@ import foodRouter from "./routes/foodRoute.js";
 import userRouter from "./routes/userRoute.js";
 import cartRouter from "./routes/cartRoute.js";
 import orderRouter from "./routes/orderRoute.js";
-import { handleStripeWebhook } from "./controllers/stripeController.js";
+import { handleStripeWebhook } from "./controllers/orderController.js";
 
 const app = express();
 
